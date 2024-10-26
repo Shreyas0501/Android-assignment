@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">demo_app</string>
+    <string name="button_new_activity">New Task</string>
+    <string name="button_new_fragment">Tasks Details</string>
+    <string name="second_activity_text">Add new task</string>
+    <string name="go_back_button">Go back</string>
+
+    <string name="demo_fragment_text">This Fragment displays task details</string>
+
+    <string name="new_fragment_text">This is new Fragment</string>
+
+    <string name="application_title">Task Management</string>
+</resources>
