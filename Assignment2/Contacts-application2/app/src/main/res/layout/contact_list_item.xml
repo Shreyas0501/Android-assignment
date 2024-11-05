@@ -1,0 +1,53 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="11dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_marginHorizontal="@dimen/avatar_margin_horizontal"
+            android:layout_marginVertical="@dimen/avatar_margin_vertical"
+            app:strokeWidth="0dp"
+            app:strokeColor="@android:color/darker_gray"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            android:src="@drawable/ic_launcher_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_margin="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name_placeholder"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_regular"/>
+
+            <TextView
+                android:id="@+id/phone_number"
+                android:layout_margin="0dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/number_placeholder"
+                android:textSize="@dimen/text_size_small"
+                android:fontFamily="@font/roboto_regular"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
