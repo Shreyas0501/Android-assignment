@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/white"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/card_corner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/margin_small">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="@dimen/avatar_size"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_marginHorizontal="@dimen/avatar_margin_horizontal"
+            android:layout_marginVertical="@dimen/avatar_margin_vertical"
+            android:layout_gravity="center_horizontal"
+            app:strokeWidth="0dp"
+            app:strokeColor="@android:color/darker_gray"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_margin="@dimen/padding_small" />
+
+        <TextView
+            android:id="@+id/full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_medium"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/name_placeholder"/>
+
+        <TextView
+            android:id="@+id/mobile_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_small"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/number_placeholder"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
