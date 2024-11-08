@@ -1,6 +1,7 @@
 package com.example.contacts_application2
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.provider.ContactsContract
 import android.provider.MediaStore
@@ -20,7 +21,7 @@ object ContactFetcher {
             null,
             null,
             null,
-            ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC"
+            ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " COLLATE NOCASE ASC"
         )
 
         contacts?.use {
@@ -29,14 +30,17 @@ object ContactFetcher {
             val photoUriColumnIndex = it.getColumnIndex(ContactsContract.CommonDataKinds.Phone.PHOTO_URI)
 
             while (it.moveToNext()) {
-                val name = if (nameColumnIndex != -1) it.getString(nameColumnIndex) else ""
-                val phoneNumber = if (numberColumnIndex != -1) it.getString(numberColumnIndex) else ""
+                val name = if (nameColumnIndex != -1) it.getString(nameColumnIndex) else "USER NOT FOUND!"
+                val phoneNumber = if (numberColumnIndex != -1) it.getString(numberColumnIndex) else "USER NOT FOUND!"
                 val photoUri = if (photoUriColumnIndex != -1) it.getString(photoUriColumnIndex) else null
 
                 val contact = Contact(name, phoneNumber)
 
                 if (photoUri != null) {
-                    contact.image = MediaStore.Images.Media.getBitmap(context.contentResolver, Uri.parse(photoUri))
+                    val uri = Uri.parse(photoUri)
+                    context.contentResolver.openInputStream(uri)?.use { inputStream ->
+                        contact.image = BitmapFactory.decodeStream(inputStream)
+                    }
                 }
                 contactsList.add(contact)
             }

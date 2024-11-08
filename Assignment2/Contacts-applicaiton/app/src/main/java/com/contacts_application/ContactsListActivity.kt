@@ -1,11 +1,8 @@
 package com.contacts_application
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class ContactsListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +12,7 @@ class ContactsListActivity : AppCompatActivity() {
         setToolBar()
 
         val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, ContactsListView())
+        fragmentTransaction.replace(R.id.fragment_container, ContactsListViewFragment())
         fragmentTransaction.commit()
     }
 

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DogBreeds</string>
+    <string name="base_url">https://raw.githubusercontent.com/DevTides/DogsApi/master/</string>
+    <string name="application_title">Dog Breeds</string>
+
+    <string name="fetch_dog_breeds_button">Fetch Dog Breeds</string>
+
+    <string name="dog_breed_name">Common Name:</string>
+    <string name="dog_breed_origin">Origin:</string>
+    <string name="dog_breed_group">Breed Group:</string>
+    <string name="dog_breed_bred_for">Bred For:</string>
+    <string name="dog_breed_life_span">Life Span:</string>
+    <string name="dog_breed_temperament">Temperament:</string>
+    <string name="dog_breed_height">Height:</string>
+    <string name="dog_breed_weight">Weight:</string>
+    <string name="dog_name_placeholder">Name placeholder</string>
+    <string name="breed_group_placeholder">Breed group placeholder</string>
+    <string name="dog_image_description">Dog image</string>
+
+    <string name="arrow_back_description">Go back icon</string>
+
+</resources>

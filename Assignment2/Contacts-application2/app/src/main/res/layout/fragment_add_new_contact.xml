@@ -8,29 +8,34 @@
     <include
         layout="@layout/tool_bar_save_contact_fragment" />
 
-    <EditText
-        android:id="@+id/et_name"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_person"
-        android:drawablePadding="@dimen/padding_medium"
-        android:hint="@string/hint_name"
-        android:textSize="@dimen/text_size_medium"
-        android:layout_margin="@dimen/padding_medium"
-        android:inputType="text"
-        tools:ignore="LabelFor" />
+        android:layout_margin="@dimen/margin_large">
 
-    <EditText
-        android:id="@+id/et_phone_number"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="@dimen/padding_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_call"
-        android:drawablePadding="@dimen/padding_medium"
-        android:textSize="@dimen/text_size_medium"
-        android:layout_margin="@dimen/padding_medium"
-        android:hint="@string/hint_phone_number"
-        android:inputType="phone"
-        tools:ignore="LabelFor" />
+        android:layout_margin="@dimen/margin_large">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_phone_number"
+            android:drawableStart="@drawable/ic_call"
+            android:drawablePadding="@dimen/padding_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_phone_number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/btn_add_contact"

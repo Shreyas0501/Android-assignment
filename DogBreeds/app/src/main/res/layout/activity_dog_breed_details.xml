@@ -1,0 +1,252 @@
+<!-- res/layout/dog_breed_details.xml -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_dog_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:contentDescription="@string/dog_image_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"/>
+
+        <TextView
+            android:id="@+id/tv_dog_name_primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dog_breed_name"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            android:padding="@dimen/padding_medium"/>
+
+        <ListView
+            android:id="@+id/list_view_dogbreed_properties"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/padding_medium">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="@dimen/layout_width_field"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/dog_breed_name"-->
+<!--                        android:textSize="@dimen/text_size_medium"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textStyle="bold"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_dog_name_secondary"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/dog_breed_name"-->
+<!--                        android:textSize="@dimen/text_size_medium" />-->
+<!--                </LinearLayout>-->
+
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_origin"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/padding_medium">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="@dimen/layout_width_field"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/dog_breed_origin"-->
+<!--                        android:textSize="@dimen/text_size_medium"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textStyle="bold"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_origin"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/dog_breed_origin"-->
+<!--                        android:textSize="@dimen/text_size_medium" />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_life_span"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/padding_medium">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="@dimen/layout_width_field"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/dog_breed_life_span"-->
+<!--                        android:textSize="@dimen/text_size_medium"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textStyle="bold"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_life_span"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/dog_breed_life_span"-->
+<!--                        android:textSize="@dimen/text_size_medium" />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_height"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/padding_medium">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="@dimen/layout_width_field"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/dog_breed_height"-->
+<!--                        android:textSize="@dimen/text_size_medium"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textStyle="bold"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_height"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/dog_breed_height"-->
+<!--                        android:textSize="@dimen/text_size_medium" />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_weight"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/padding_medium">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="@dimen/layout_width_field"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/dog_breed_weight"-->
+<!--                        android:textSize="@dimen/text_size_medium"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textStyle="bold"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_weight"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/dog_breed_weight"-->
+<!--                        android:textSize="@dimen/text_size_medium" />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_temperament"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/padding_medium">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="@dimen/layout_width_field"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/dog_breed_temperament"-->
+<!--                        android:textSize="@dimen/text_size_medium"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textStyle="bold"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_temperament"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/dog_breed_temperament"-->
+<!--                        android:textSize="@dimen/text_size_medium" />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_breed_group"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/padding_medium">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="@dimen/layout_width_field"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/dog_breed_group"-->
+<!--                        android:textSize="@dimen/text_size_medium"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textStyle="bold"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_breed_group"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/dog_breed_group"-->
+<!--                        android:textSize="@dimen/text_size_medium" />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/ll_bred_for"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:padding="@dimen/padding_medium">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="@dimen/layout_width_field"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/dog_breed_bred_for"-->
+<!--                        android:textSize="@dimen/text_size_medium"-->
+<!--                        android:textColor="@android:color/black"-->
+<!--                        android:textStyle="bold"/>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_bred_for"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="@string/dog_breed_bred_for"-->
+<!--                        android:textSize="@dimen/text_size_medium" />-->
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+<!--        </ScrollView>-->
+
+        </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/btn_go_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/margin_medium"
+        android:contentDescription="go back button"
+        android:src="@drawable/ic_arrow_back"
+        android:background="#00292828" />
+
+
+</FrameLayout>
