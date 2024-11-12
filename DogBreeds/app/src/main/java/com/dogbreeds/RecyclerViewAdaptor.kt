@@ -45,10 +45,8 @@ class RecyclerViewAdaptor(private val context: Activity, private val dogBreedsLi
         var image: CircleImageView = itemView.findViewById(R.id.img_avatar)
 
         init {
-
             itemView.setOnClickListener {
                 listener.onItemClicking(adapterPosition)
-//                val dogBreedDetailsFragment = DogBreedDetailsFragment(dogBreedsList[adapterPosition])
             }
         }
     }

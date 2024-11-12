@@ -1,7 +1,6 @@
 package com.dogbreeds
 
 import android.content.Context
-import android.util.Log
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
 import retrofit2.Callback
@@ -33,13 +32,11 @@ object DogBreedsFetcher {
                     cachedDogBreeds = ArrayList(responseBody)
                     callback(ArrayList(responseBody))
                 } else {
-                    Log.d("DogBreedsFetcher", "Response body is empty.")
-                    callback(null)
+                    callback(ArrayList())
                 }
             }
 
             override fun onFailure(call: Call<List<DogBreed>?>, t: Throwable) {
-                Log.d("DogBreedsFetcher", "onFailure: ${t.message}")
                 callback(null)
             }
         })

@@ -1,4 +1,3 @@
-// DogBreedPropertyAdapter.kt
 package com.dogbreeds
 
 import android.content.Context
@@ -27,7 +26,7 @@ class DogBreedPropertyAdapter(
         val valueTextView = view.findViewById<TextView>(R.id.property_value)
 
         if (property.value.isBlank()) {
-            property.value = "Not Specified"
+            property.value = context.getString(R.string.not_specified)
         }
 
         titleTextView.text = property.title

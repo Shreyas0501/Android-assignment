@@ -2,6 +2,7 @@
     <string name="app_name">DogBreeds</string>
     <string name="base_url">https://raw.githubusercontent.com/DevTides/DogsApi/master/</string>
     <string name="application_title">Dog Breeds</string>
+    <string name="go_back">Go Back</string>
 
     <string name="fetch_dog_breeds_button">Fetch Dog Breeds</string>
 
@@ -18,5 +19,20 @@
     <string name="dog_image_description">Dog image</string>
 
     <string name="arrow_back_description">Go back icon</string>
+
+
+    <!-- Dog Breed Property Labels -->
+    <string name="name">Name</string>
+    <string name="origin">Origin</string>
+    <string name="breed_group">Breed Group</string>
+    <string name="bred_for">Bred For</string>
+    <string name="life_span">Life Span</string>
+    <string name="temperament">Temperament</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+
+    <string name="not_specified">Not Specified</string>
+    <string name="failed_to_fetch">Failed to fetch contacts</string>
+    <string name="dog_breeds">dogBreeds</string>
 
 </resources>

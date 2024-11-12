@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,11 +36,10 @@ class DogBreedsListFragment: Fragment() {
         dogBreedsFetcher = DogBreedsFetcher
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        viewLifecycleOwner.lifecycleScope.launch {
-            delay(1000)
-            fetchDogBreeds()
-        }
-//        fetchDogBreeds()
+//        viewLifecycleOwner.lifecycleScope.launch {
+//            delay(1000)
+//        }
+        fetchDogBreeds()
 
         buttonGoBack = view.findViewById(R.id.btn_go_back)
         buttonGoBack.setOnClickListener() {
@@ -66,7 +66,7 @@ class DogBreedsListFragment: Fragment() {
                     }
                 })
             } else {
-                Log.d("DogBreeds List view", "Failed to fetch contacts")
+                Toast.makeText(requireContext(), getString(R.string.failed_to_fetch), Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -74,12 +74,18 @@ class DogBreedsListFragment: Fragment() {
     private fun openDogBreedDetailsFragment(dogBreed: DogBreed) {
         val detailsFragment = DogBreedDetailsFragment()
         val bundle = Bundle().apply {
-            putParcelable("dogBreed", dogBreed)
+            putParcelable(getString(R.string.dog_breeds), dogBreed)
         }
 
         detailsFragment.arguments = bundle
 
         requireActivity().supportFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                R.anim.slide_in_right,
+                R.anim.slide_out_left,
+                R.anim.slide_in_left,
+                R.anim.slide_out_right
+            )
             .replace(R.id.frame_layout_fragment_container, detailsFragment)
             .addToBackStack(null)
             .commit()
