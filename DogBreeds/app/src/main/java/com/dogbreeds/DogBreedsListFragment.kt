@@ -1,7 +1,6 @@
 package com.dogbreeds
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,11 +8,8 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class DogBreedsListFragment: Fragment() {
 
@@ -27,7 +23,7 @@ class DogBreedsListFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_dogbreeds_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_dog_breeds_list, container, false)
 
         loadingAnimation = view.findViewById(R.id.progress_bar)
         setLoadingAnimation(true)

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/ll_origin"
+    android:padding="@dimen/padding_medium"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/property_title"
+        android:layout_width="@dimen/layout_width_field"
+        android:layout_height="wrap_content"
+        android:text="@string/dog_breed_origin"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/property_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/dog_breed_origin"
+        android:textSize="@dimen/text_size_medium" />
+
+</LinearLayout>

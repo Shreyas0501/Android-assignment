@@ -1,4 +1,4 @@
-package com.dogbreeds
+package com.dogbreeds_mvp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,34 +8,45 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.dogbreeds_mvp.R
+import com.dogbreeds_mvp.contract.DogBreedDetailsContract
+import com.dogbreeds_mvp.model.DogBreed
+import com.dogbreeds_mvp.model.DogBreedProperty
+import com.dogbreeds_mvp.presenter.DogBreedDetailsPresenter
 import com.squareup.picasso.Picasso
 
-class DogBreedDetailsFragment : Fragment() {
+class DogBreedDetailsFragment: Fragment(), DogBreedDetailsContract.View {
 
+    private lateinit var presenter: DogBreedDetailsPresenter
+    private lateinit var view: View
     private lateinit var buttonGoBack: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_dog_breed_details, container, false)
-        val dogBreed: DogBreed? = arguments?.getParcelable(getString(R.string.dog_breeds))
-        dogBreed?.let {
-            setDogBreedProperties(view, it)
-        }
-        setupGoBackButton(view)
+    ): View {
+        view = inflater.inflate(R.layout.fragment_dogbreed_details, container, false)
+        val dogBreed = arguments?.getParcelable<DogBreed>("dogBreed")
+
+        presenter = DogBreedDetailsPresenter(this)
+
+        dogBreed?.let { presenter.loadDobBreedDetails(it) }
+
         return view
     }
 
-    private fun setupGoBackButton(view: View) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         buttonGoBack = view.findViewById(R.id.btn_go_back)
-        buttonGoBack.setOnClickListener {
+        buttonGoBack.setOnClickListener() {
             parentFragmentManager.popBackStack()
         }
     }
 
-    private fun setDogBreedProperties(view: View, dogBreed: DogBreed) {
+    override fun showDogBreedDetails(dogBreed: DogBreed) {
+
         val properties = mutableListOf<DogBreedProperty>()
 
         loadImage(view, dogBreed.url)
@@ -50,9 +61,9 @@ class DogBreedDetailsFragment : Fragment() {
         properties.add(DogBreedProperty(getString(R.string.weight), "${dogBreed.weight.metric} kgs (${dogBreed.weight.imperial} lbs)"))
         properties.add(DogBreedProperty(getString(R.string.height), "${dogBreed.height.metric} cms (${dogBreed.height.imperial} in)"))
 
-
         val listView = view.findViewById<ListView>(R.id.list_view_dogbreed_properties)
         listView.adapter = DogBreedPropertyAdapter(requireContext(), properties)
+
     }
 
     private fun loadImage(view: View, url: String) {
@@ -63,5 +74,4 @@ class DogBreedDetailsFragment : Fragment() {
     private fun setText(view: View, textViewId: Int, text: String?) {
         view.findViewById<TextView>(textViewId).text = text ?: ""
     }
-
 }
